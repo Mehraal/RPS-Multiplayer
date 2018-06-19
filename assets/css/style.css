@@ -1,0 +1,39 @@
+body {
+    background-image: url("http://blog.online.colostate.edu/wp-content/uploads/2016/05/Rock-Paper-Scissors.jpg");
+    background-size: 100%;
+    /* background-color: bisque; */
+}
+   
+.status {
+    background-color: #b2b6b6;
+    opacity: 0.8;
+    margin-left: -120px;
+    margin-top: 20px;
+    height: 150px;
+    padding: 20px;
+    width: 60%;
+}
+#win {
+    width: 200px;
+    height: 100px;
+}
+#lose {
+    width: 200px;
+    height: 100px;
+
+}
+#tie {
+    width: 200px;
+    height: 100px;
+}
+.ScoreBoard {
+    background-color: #69f0c3;
+    opacity: 0.8;
+    float: right;
+    margin-right: -120px;
+    height: 400px;
+    margin-top: 20px;
+    padding: 20px;
+    width: 50%;
+    
+}
