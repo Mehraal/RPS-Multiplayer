@@ -18,32 +18,35 @@
 </head>
 <body>
    
+   
     <div class="container">
-        <div class = "row">
-            <div class="col-md-6">
-                <form>
-                    <div class="status">
-                        <label for="formGroupExampleInput">Status</label>
-                        <input type="text" class="form-control" id="player1" placeholder="player 1:">
-                        <input type="text" class="form-control" id="player2" placeholder="Player 2:">
+        <div class="row">
+                <div class="col-md-4" id = "Player-1">
+                    <h1 class="text-center">Player-1</h1>
+                    <form>
+                        <label for-"win-input">Win</label>
+                        <input type="text" class="form-control" id="win-input">
+                        <label for- "lose-input">Lose</label>
+                        <input type="text" class="form-control" id="lose-input">
+                        <label for- "tie-input">Tie</label>
+                        <input type="text" class="form-control" id="tie-input">
+                    </form>
+                </div> 
+                <div class="col-md-4" id = "Player-2">
+                    <h1 class="text-center">Player-2</h1>
+                    <form>
+                        <label for- "win-input">Win</label>
+                        <input type="text" class="form-control" id="win-input">
+                        <label for- "lose-input">Lose</label>
+                        <input type="text" class="form-control" id="lose-input">
+                        <label for- "tie-input">Tie</label>
+                        <input type="text" class="form-control" id="tie-input" >
                         
-                        
-                    </div>
-                </form>
-            </div>
-        
-            <div class="col-md-6">
-                <form>
-                    <div class="ScoreBoard">
-                        <label for="formGroupExampleInput">ScoreBoard</label>
-                        <input type="text" class="form-control" id="win" placeholder="Wins: ">
-                        <input type="text" class="form-control" id="lose" placeholder="Losses: ">
-                        <input type="text" class="form-control" id="tie" placeholder="Ties: ">
-                    </div>
-                </form>
-            </div>
-        
-    </div>
+                    </form>
+                </div> 
+            </div>     
+        </div> 
+    </div> 
 
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
     <script>
@@ -57,6 +60,28 @@
             messagingSenderId: "963277414168"
         };
         firebase.initializeApp(config);
+
+        var database = firebase.database();
+        // var player1 = " ";
+        // var player2 = " ";
+        var Win = 0;
+        var lose = 0;
+        var tie = 0;
+
+        $("#add-employee-btn").on("click", function () {
+                event.preventDefault();
+                win = $("#win-input").val().trim();
+                lose = $("#lose-input").val().trim();
+                tie = $("#tie-input").val().trim();
+                
+
+                dataBase.ref().push({
+                    win: win,
+                    lose: lose,
+                    tie: tie,
+                    
+                });
+            });
     </script>
     
 </body>
