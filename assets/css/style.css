@@ -7,25 +7,25 @@ body {
     font-size: 30px;
     text-align: center;
 }
-#Player-1 {
+#Player1 {
      background-color: #727777;
      color:#000000;
      width: 20%;
      opacity: 0.8;
      margin-top: 60px;
      margin-left: 100px;
-     height: 350px;
-     padding: 20px;
+     height: 370px;
+     padding: 10px;
 } 
- #Player-2 {
+ #Player2 {
      background-color: #579696;
      color:#ffffff;
      width: 20%;
      opacity: 0.8;
      margin-top: 60px;
      margin-left: 100px;
-     height: 350px;
-     padding: 20px;
+     height: 370px;
+     padding: 10px;
      
  }
  /* .ScoreBoard { 

@@ -1,5 +1,5 @@
-// var player1 = " ";
-// var player2 = " ";
+var player1 = " ";
+var player2 = " ";
 var player1Choices = ["r", "p", "s"];
 var player2Choices = ["r", "p", "s"];
 
@@ -16,37 +16,39 @@ document.onkeyup = function (event) {
     var player2Guess = player2Choices[Math.floor(Math.random() * player2Choices.length)];
     // var compare = function (player1Guess, player2Guess) {
 
-    if ((player1Guess === "r") || (player1Guess=== "p") || (player1Guess === "s")) {
+
+    if ((player1Guess === "r") || (player1Guess === "p") || (player1Guess === "s") && (player2Guess === "r") || (player2Guess === "p") || (player2Guess === "s")) {
 
 
         if ((player1Guess === "r") && (player2Guess === "p")) {
-          return(console.log("player2Losses"));
+            (console.log("player1 losses"));
         }
 
         if ((player1Guess === "p") && (player2Guess === "s")) {
-           return (console.log("player1Losses"));
+            (console.log("player1 losses"));
         }
 
         if ((player1Guess === "r") && (player2Guess === "s")) {
-            return(console.log("player1Wins"));
+            (console.log("player1 wins"));
         }
 
         if ((player1Guess === "p") && (player2Guess === "r")) {
-            return(console.log("player1Wins"));
+            (console.log("player1 wins"));
         }
 
         if ((player1Guess === "s") && (player2Guess === "r")) {
-            return(console.log("playe1Losses"));
+            (console.log("playe1 losses"));
         }
 
         if ((player1Guess === "s") && (player2Guess === "p")) {
-            return(console.log("player1Wins"));
+            (console.log("player1 wins"));
         }
 
         if (player1Guess === player2Guess) {
-           return(console.log("you tied, try again"));
+           (console.log("you tied, try again"));
         } 
     }
+    
         // var html =
         //     "<p>You chose: " + player1Guess + "</p>" +
         //     "<p>The playerTwo chose: " + player2Guess + "</p>" +
@@ -56,4 +58,5 @@ document.onkeyup = function (event) {
 
         // document.querySelector("#game").innerHTML = html;
     }
-}
+
+
