@@ -2,38 +2,29 @@ body {
     background-image: url("http://blog.online.colostate.edu/wp-content/uploads/2016/05/Rock-Paper-Scissors.jpg");
     background-size: 100%;
 }
-#game {
-    color: white;
-    font-size: 30px;
-    text-align: center;
+container {
+    justify-content: center;
 }
-#Player1 {
+#Players {
      background-color: #727777;
      color:#000000;
      width: 20%;
      opacity: 0.8;
      margin-top: 60px;
      margin-left: 100px;
-     height: 400px;
-     padding: 10px;
+     height: 250px;
+     padding: 20px;
 } 
- #Player2 {
+ #Result {
      background-color: #579696;
      color:#ffffff;
      width: 20%;
      opacity: 0.8;
      margin-top: 60px;
-     margin-left: 100px;
-     height: 400px;
-     padding: 10px;
+     margin-right: 100px;
+     height: 250px;
+     padding: 20px;
+     
      
  }
- /* .ScoreBoard { 
-     background-color: #9da584;
-     color: white;
-     width: 40%;
-     margin-left: 10px;
-     height: 500px;
-     padding: 40px 20px 20px 80px;
-     opacity: 0.9;
- }  */
+ 

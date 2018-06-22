@@ -20,23 +20,29 @@
    
    
     <div class="container">
+        <h1 class="text-center">RPS Multiplayer</h1>
         <div class="row">
-                <div class="col-md-4" id = "Player1">
-                    <h1 class="text-center">P1</h1>
+            <div class="col-md-4" id="Players">
                     <form>
                         <label for="player1-input">player1</label>
                         <input type="text" class="form-control" id="player1-input">
-                        <label for="win-input">Win</label>
-                        <input type="text" class="form-control" id="win-input">
-                        <label for= "lose-input">Lose</label>
-                        <input type="text" class="form-control" id="lose-input">
-                        <label for= "tie-input">Tie</label>
-                        <input type="text" class="form-control" id="tie-input">
-                        <button class="btn btn-dark" id="add-player1-btn" type="submit">Submit</button>
+                        <label for="player2-input">player2</label>
+                        <input type="text" class="form-control" id="player2-input">
+                         <button class="btn btn-dark" id="add-player-btn" type="submit">Submit</button> 
+                    </form> 
+            </div>
+            <div class="col-md-4" id="Result">
+                    <form>
+                       <label for="win-input">Win</label>
+                       <input type="text" class="form-control" id="win-input">
+                       <label for="lose-input">Lose</label>
+                       <input type="text" class="form-control" id="lose-input">
+                       <label for="tie-input">Tie</label>
+                       <input type="text" class="form-control" id="tie-input">
                     </form>
-                </div> 
-                <div class="col-md-4" id = "Player2">
-                    <h1 class="text-center">P2</h1>
+            </div>
+            
+                <!-- <div class="col-md-4" id = "Player2">
                     <form>
                         <label for="player2-input">player2</label>
                         <input type="text" class="form-control" id="player2-input">
@@ -48,9 +54,7 @@
                         <input type="text" class="form-control" id="tie-input" >
                         <button class="btn btn-dark" id="add-player2-btn" type="submit">Submit</button>
                         
-                    </form>
-                </div> 
-            </div>     
+                    </form>  -->    
         </div> 
     </div> 
 
@@ -74,13 +78,12 @@
         var lose = 0;
         var tie = 0;
 
-        $("#add-player1-btn").on("click", function () {
+        $("#add-player-btn").on("click", function () {
             event.preventDefault();
             player1 = $("#player1-input").val().trim();
-        
-        $("#add-player2-btn").on("click", function () {
-            event.preventDefault();
             player2 = $("#player2-input").val().trim();
+        
+    
             
 
             database.ref().push({
@@ -92,7 +95,6 @@
            
         });
     });
-});
         database.ref().on("child_added", function (childSnapshot) {
 
                 console.log(childSnapshot.val());
