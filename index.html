@@ -32,6 +32,7 @@
                         <input type="text" class="form-control" id="lose-input">
                         <label for= "tie-input">Tie</label>
                         <input type="text" class="form-control" id="tie-input">
+                        <button class="btn btn-dark" id="add-player-btn" type="submit">Submit</button>
                     </form>
                 </div> 
                 <div class="col-md-4" id = "Player2">
@@ -45,6 +46,7 @@
                         <input type="text" class="form-control" id="lose-input">
                         <label for- "tie-input">Tie</label>
                         <input type="text" class="form-control" id="tie-input" >
+                        <button class="btn btn-dark" id="add-player-btn" type="submit">Submit</button>
                         
                     </form>
                 </div> 
@@ -72,24 +74,31 @@
         var lose = 0;
         var tie = 0;
 
-        $("#add-employee-btn").on("click", function () {
+        $("#add-player-btn").on("click", function () {
             event.preventDefault();
-            player1 = $("#player1").val().trim();
-            player2 = $("#player2").val().trim();
-            win = $("#win-input").val().trim();
-            los = $("#lose-input").val().trim();
-            tie = $("#tie-input").val().trim();
+            player1 = $("#player1-input").val().trim();
+            player2 = $("#player2-input").val().trim();
+            // win = $("#win-input").val().trim();
+            // los = $("#lose-input").val().trim();
+            // tie = $("#tie-input").val().trim();
                 
 
-            dataBase.ref().push({
+            database.ref().push({
             player1: player1,
             player2: player2,
-            win: win,
-            lose: lose,
-            tie: tie,
-                    
+            // win: win,
+            // lose: lose,
+            // tie: tie,
+           
         });
     });
+        database.ref().on("child_added", function (childSnapshot) {
+
+                console.log(childSnapshot.val());
+                console.log(childSnapshot.val().player1);
+                console.log(childSnapshot.val().player2);
+        })
+
     </script>
     
 </body>

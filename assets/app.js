@@ -11,6 +11,7 @@ var ties = 0;
 document.onkeyup = function (event) {
 
     var player1Guess = event.key;
+    var player2Guess = event.key;
 
     var player1Guess = player1Choices[Math.floor(Math.random() * player1Choices.length)];
     var player2Guess = player2Choices[Math.floor(Math.random() * player2Choices.length)];
