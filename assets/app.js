@@ -1,7 +1,6 @@
-var player1 = " ";
-var player2 = " ";
-var player1Choices = ["r", "p", "s"];
+
 var player2Choices = ["r", "p", "s"];
+
 
 var wins = 0;
 var losses = 0;
@@ -11,14 +10,12 @@ var ties = 0;
 document.onkeyup = function (event) {
 
     var player1Guess = event.key;
-    var player2Guess = event.key;
+   
 
-    var player1Guess = player1Choices[Math.floor(Math.random() * player1Choices.length)];
     var player2Guess = player2Choices[Math.floor(Math.random() * player2Choices.length)];
-    // var compare = function (player1Guess, player2Guess) {
+   
 
-
-    if ((player1Guess === "r") || (player1Guess === "p") || (player1Guess === "s") && (player2Guess === "r") || (player2Guess === "p") || (player2Guess === "s")) {
+    if ((player1Guess === "r") || (player1Guess === "p") || (player1Guess === "s")) {
 
 
         if ((player1Guess === "r") && (player2Guess === "p")) {
