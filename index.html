@@ -21,41 +21,27 @@
    
     <div class="container">
         <h1 class="text-center">RPS Multiplayer</h1>
-        <div class="row">
-            <div class="col-md-4" id="Players">
-                    <form>
-                        <label for="player1-input">player1</label>
-                        <input type="text" class="form-control" id="player1-input">
-                        <label for="player2-input">player2</label>
-                        <input type="text" class="form-control" id="player2-input">
-                         <button class="btn btn-dark" id="add-player-btn" type="submit">Submit</button> 
-                    </form> 
-            </div>
-            <div class="col-md-4" id="Result">
-                    <form>
-                       <label for="win-input">Win</label>
-                       <input type="text" class="form-control" id="win-input">
-                       <label for="lose-input">Lose</label>
-                       <input type="text" class="form-control" id="lose-input">
-                       <label for="tie-input">Tie</label>
-                       <input type="text" class="form-control" id="tie-input">
-                    </form>
-            </div>
-            
-                <!-- <div class="col-md-4" id = "Player2">
-                    <form>
-                        <label for="player2-input">player2</label>
-                        <input type="text" class="form-control" id="player2-input">
-                        <label for- "win-input">Win</label>
-                        <input type="text" class="form-control" id="win-input">
-                        <label for- "lose-input">Lose</label>
-                        <input type="text" class="form-control" id="lose-input">
-                        <label for- "tie-input">Tie</label>
-                        <input type="text" class="form-control" id="tie-input" >
-                        <button class="btn btn-dark" id="add-player2-btn" type="submit">Submit</button>
-                        
-                    </form>  -->    
-        </div> 
+    <div class="row">
+        <div class="col-md-4" id="Players">
+            <form>
+                <label for="player1-input">player1</label>
+                <input type="text" class="form-control" id="player1-input">
+                <label for="player2-input">player2</label>
+                <input type="text" class="form-control" id="player2-input">
+                <button class="btn btn-dark" id="add-players-btn" type="submit">Submit</button> 
+            </form> 
+        </div>
+        <div class="col-md-4" id="Result">
+             <form>
+                <label for="win-input">Win</label>
+                <input type="text" class="form-control" id="win-input">
+                <label for="lose-input">Lose</label>
+                <input type="text" class="form-control" id="lose-input">
+                <label for="tie-input">Tie</label>
+                <input type="text" class="form-control" id="tie-input">
+            </form>
+        </div>
+    </div> 
     </div> 
 
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
@@ -78,7 +64,7 @@
         var lose = 0;
         var tie = 0;
 
-        $("#add-player-btn").on("click", function () {
+        $("#add-players-btn").on("click", function () {
             event.preventDefault();
             player1 = $("#player1-input").val().trim();
             player2 = $("#player2-input").val().trim();
@@ -89,6 +75,7 @@
             database.ref().push({
             player1: player1,
             player2: player2,
+            
             // win: win,
             // lose: lose,
             // tie: tie,
@@ -101,6 +88,7 @@
                 console.log(childSnapshot.val().player1);
                 console.log(childSnapshot.val().player2);
         })
+        
 
     </script>
     <script src="./assets/app.js"></script>
