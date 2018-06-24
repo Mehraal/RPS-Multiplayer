@@ -1,4 +1,5 @@
-
+var numberOfPlayers = 2;
+// var playerChoices = ["r","p","s"];
 
 var wins = 0;
 var losses = 0;
@@ -6,32 +7,31 @@ var ties = 0;
 
 
 document.onkeyup = function (event) {
-
+    
     var player1Guess = event.key;
     var player2Guess = event.key;
-   
 
-    // var player2Guess = player2Choices[Math.floor(Math.random() * player2Choices.length)];
-   
-
-    if ((player1Guess === "r") || (player1Guess === "p") || (player1Guess === "s") && (player2Guess === "r") || (player2Guess === "p") || (player2Guess === "s")) {
+    if ((player1Guess === "r" || "p" || "s") && (player2Guess === "r" || "p" || "s")) {
 
 
+    
+    
         if ((player1Guess === "r") && (player2Guess === "p")) {
-            console.log("player1 losses");
+           return (console.log("player2 wins"));
         } else if ((player1Guess === "p") && (player2Guess === "s")) {
-            console.log("player1 losses");
+            console.log("player2 wins");
         } else if ((player1Guess === "r") && (player2Guess === "s")) {
             console.log("player1 wins");
         } else if ((player1Guess === "p") && (player2Guess === "r")) {
             console.log("player1 wins");
         } else if ((player1Guess === "s") && (player2Guess === "r")) {
-            console.log("playe1 losses");
-        } else { ((player1Guess === "s") && (player2Guess === "p")) 
+            console.log("playe2 wins");
+        } else { (player1Guess === player2Guess) 
             console.log("Tie! play again");
         }
-    }
 }
+}
+
        
     
 
