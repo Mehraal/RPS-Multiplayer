@@ -1,11 +1,15 @@
-var config = {
-    apiKey: "AIzaSyAgEuXgOYwmHK_RqpVzMIJDRLD5ZB7UbbQ",
-    authDomain: "rps-multi-7fedd.firebaseapp.com",
-    databaseURL: "https://rps-multi-7fedd.firebaseio.com",
-    storageBucket: "rps-multi-7fedd.appspot.com"
-};
-
-firebase.initializeApp(config);
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  
+        // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyChPZmtVpOo-izOeHaN5WNCSrdN3hjtHxo",
+        authDomain: "rps-multiplayer-c8cb3.firebaseapp.com",
+        databaseURL: "https://rps-multiplayer-c8cb3.firebaseio.com",
+        projectId: "rps-multiplayer-c8cb3",
+        storageBucket: "rps-multiplayer-c8cb3.appspot.com",
+        messagingSenderId: "963277414168"
+      };
+    firebase.initializeApp(config);
 
 var database = firebase.database();
 var chatData = database.ref("/chat");
@@ -107,11 +111,9 @@ chatData.orderByChild("time").on("child_added", function (snapshot) {
             + snapshot.val().name + "</span>: " + snapshot.val().message + "</p>");
     }
 
-    // Keeps div scrolled to bottom on each update.
     $("#chat-messages").scrollTop($("#chat-messages")[0].scrollHeight);
 });
 
-// Tracks changes in key which contains player objects
 playersRef.on("value", function (snapshot) {
 
     // length of the 'players' array
